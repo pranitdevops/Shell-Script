@@ -2,6 +2,17 @@
 
 ID=$(id -u)#root user decleration
 
+validate(){
+    if [ $1 -ne 0 ]
+    then
+        echo "$2 installation got failed"
+        exit 1
+    else
+        echo "$2 installation is successfull"
+    fi
+
+}
+
 if [ $ID -ne 0 ]
 then
      echo "error : you are not a root user"
@@ -12,22 +23,21 @@ fi
 
 yum install mysql -y
 
-if [ $? -ne 0 ]
-then
-    echo "mysql installation got failed"
-    exit 1
-else
-    echo "mysql installation is successfull"
-fi
+validate $? "mysql"
+
+yum install git  -y
+
+validate $? "git"
 
 
-yum install git -y
 
-if [ $? -ne 0 ]
-then
-    echo "git installation got failed"
-    exit 1
-else
-    echo "git  installation is successfull"
-fi
+# yum install git -y
+
+# if [ $? -ne 0 ]
+# then
+#     echo "git installation got failed"
+#     exit 1
+# else
+#     echo "git  installation is successfull"
+# fi
 
