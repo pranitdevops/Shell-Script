@@ -10,7 +10,7 @@ echo "Enter password correctly"
 
 read -s password
 
-echo "password  is  : $password"
+# echo "password  is  : $password"
 
 
 
