@@ -2,6 +2,11 @@
 
 ID=$(id -u)#root user decleration
 
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[om"
+
 TIMESTAMP=$(date +%F-%H)
 
 LOG_FILE="/tmp/$0-$TIMESTAMP"
@@ -9,10 +14,10 @@ LOG_FILE="/tmp/$0-$TIMESTAMP"
 validate(){
     if [ $1 -ne 0 ]
     then
-        echo "$2 installation got failed"
+        echo -e "$2 $R installation got failed"
         exit 1
     else
-        echo "$2 installation is successfull"
+        echo "$2 $G installation is successfull"
     fi
 
 }
