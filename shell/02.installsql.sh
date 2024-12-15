@@ -14,10 +14,10 @@ LOG_FILE="/tmp/$0-$TIMESTAMP"
 validate(){
     if [ $1 -ne 0 ]
     then
-        echo -e "$2 $R installation got failed"
+        echo -e "$2 $R installation got failed $N"
         exit 1
     else
-        echo "$2 $G installation is successfull"
+        echo -e "$2 $G installation is successfull $N"
     fi
 
 }
