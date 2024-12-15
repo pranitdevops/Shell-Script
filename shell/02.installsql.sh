@@ -2,6 +2,10 @@
 
 ID=$(id -u)#root user decleration
 
+TIMESTAMP=$(date +%F-%H)
+
+LOG_FILE="/tmp/$0-$TIMESTAMP"
+
 validate(){
     if [ $1 -ne 0 ]
     then
@@ -21,11 +25,11 @@ else
      echo "you are a root user"
 fi
 
-yum install mysql -y
+yum install mysql -y &>>$LOG_FILE
 
 validate $? "mysql"
 
-yum install git  -y
+yum install git  -y &>>$LOG_FILE
 
 validate $? "git"
 
