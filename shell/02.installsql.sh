@@ -12,3 +12,22 @@ fi
 
 yum install mysql -y
 
+if [ $? -ne 0 ]
+then
+    echo "mysql installation got failed"
+    exit 1
+else
+    echo "mysql installation is successfull"
+fi
+
+
+yum install git -y
+
+if [ $? -ne 0 ]
+then
+    echo "git installation got failed"
+    exit 1
+else
+    echo "git  installation is successfull"
+fi
+
