@@ -4,7 +4,13 @@ echo "Enter username correctly"
 
 read username
 
-echo "entered : $username"
+echo "username is  : $username"
+
+echo "Enter password correctly"
+
+read password
+
+echo "password  is  : $password"
 
 
 
